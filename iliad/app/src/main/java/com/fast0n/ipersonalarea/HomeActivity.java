@@ -414,23 +414,12 @@ public class HomeActivity extends AppCompatActivity {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             if (backPressedToExitOnce) {
-                new Handler().postDelayed(this::finishAffinity, 500);
-
+                finishAffinity();
             } else {
-                this.backPressedToExitOnce = true;
-                Fragment fragment;
-                fragment = new MasterCreditFragment();
-
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction ft = fragmentManager.beginTransaction();
-                ft.replace(R.id.fragment, fragment);
-                ft.commit();
-
-
+                backPressedToExitOnce = true;
                 Toasty.info(HomeActivity.this, getString(R.string.press_back), Toast.LENGTH_SHORT).show();
                 new Handler().postDelayed(() -> backPressedToExitOnce = false, 1000);
             }
-
         }
     }
 
