@@ -27,7 +27,7 @@ module.exports = (req, res) => {
 
   if (credit !== undefined || (estero !== undefined && token !== undefined)) {
     const options = {
-      url: `${constants.authorityILIAD_BASE_URL}${constants.ILIAD_OPTION_URL.credit}`,
+      url: `${constants.ILIAD_BASE_URL}${constants.ILIAD_OPTION_URL.credit}`,
       method: 'GET',
       headers,
     };
