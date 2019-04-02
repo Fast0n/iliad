@@ -1,0 +1,55 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "script",
+        "ecmaFeatures": {
+            "jsx": false
+        }
+    },
+    "env": {
+        "es6": true,
+        "node": true,
+        "jasmine": true
+    },
+    "extends": ["airbnb-base", "plugin:security/recommended"],
+    "plugins": [
+        "chai-expect",
+        "security"
+    ],
+    "rules": {
+        "security/detect-non-literal-fs-filename": "error",
+        "security/detect-unsafe-regex": "error",
+        "security/detect-buffer-noassert": "error",
+        "security/detect-child-process": "error",
+        "security/detect-disable-mustache-escape": "error",
+        "security/detect-eval-with-expression": "error",
+        "security/detect-no-csrf-before-method-override": "error",
+        "security/detect-non-literal-regexp": "error",
+        "security/detect-non-literal-require": "error",
+        "security/detect-object-injection": "error",
+        "security/detect-possible-timing-attacks": "error",
+        "security/detect-pseudoRandomBytes": "error",
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "unicode-bom": [
+            "error",
+            "never"
+        ],
+        "comma-dangle": ["error", {
+            "arrays": "always-multiline",
+            "objects": "always-multiline",
+            "imports": "always-multiline",
+            "exports": "always-multiline",
+            "functions": "never"
+        }],
+        "no-underscore-dangle": ["error", {
+            "allow": ["_id", "__v"]
+        }],
+        "no-warning-comments": [1, {
+            "terms": ["todo", "fixme", "bug"],
+            "location": "anywhere"
+        }]
+    }
+}
